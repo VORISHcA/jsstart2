@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        function Breakdown(count) {
+            if (count <= 0 || count >= 999 || count % 1 != 0) {
+                console.log('вне [0, 999] диапазона, не целое число или вообще не число');
+                return {};
+            }else{
+
+            return {
+                numbers: count % 10,
+                dozens: Math.floor(count / 10 % 10),
+                hundreds: Math.floor(count / 100),
+            }};
+        }
+
+        console.log(Breakdown(998));
+    </script>
+
+    <script>
+        'use strict';
+        function Product(name, price) {
+            this.name = name;
+            this.price = price;
+        }
+        Product.prototype.make25PercentDiscount = function () {
+            this.price = Math.floor(this.price - this.price * 0,75);
+        };
+        
+    </script>
+
+    <script>
+        'use strict';
+
+        class Product {
+            constructor(name, price) {
+                this.name = name;
+                this.price = price;
+            }
+
+            make25PercentDiscount() {
+                this.price = Math.floor(this.price - this.price * 0,75);
+            }
+        }
+
+        /**
+        const test = new Prod
+        test.make25PercentDiscount();
+        */
+    </script>
+    
+    <script>
+        'use strict';
+        //я тут подсматривал, немного непривычно, но все понял, можно не проверять
+
+        function Post(author, text, date) {
+            this.author = author;
+            this.text = text;
+            this.date = date;
+        }
+
+        Post.prototype.edit = function(text_for_in) {
+            this.text = text_for_in;
+        }
+
+        function AttachedPost(author, text, date) {
+            Post.call(this, author, text, date);
+            this.highlighted = false;
+        }
+
+        AttachedPost.prototype = Object.create(Post.prototype);
+        AttachedPost.prototype.constructor = AttachedPost;
+
+        AttachedPost.prototype.makeTextHighlighted = function() {
+            this.highlighted = true;
+        }
+
+        const attached1 = new AttachedPost('admin', 'lorem2 ipsum2', new Date());
+        console.log(attached1);
+        attached1.makeTextHighlighted();
+        attached1.edit('dolor2 sit2');
+        console.log(attached1);
+    </script>
+
+    <script>
+        'use strict';
+
+        class Post {
+            constructor(author, text, date) {
+                this.author = author;
+                this.text = text;
+                this.date = date;
+            }
+
+            edit(text) {
+                this.text = text;
+            }
+        }
+
+        class AttachedPost extends Post {
+            constructor(author, text, date) {
+                super(author, text, date);
+                this.highlighted = false;
+            }
+
+            makeTextHighlighted() {
+                this.highlighted = true;
+            }
+        }
+
+        const attached1 = new AttachedPost('admin', 'lorem2 ipsum2', new Date());
+        console.log(attached1);
+        attached1.makeTextHighlighted();
+        attached1.edit('dolor2 sit2');
+        console.log(attached1);
+    </script>
+</body>
+</html>
