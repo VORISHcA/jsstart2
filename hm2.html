@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <script>
+        //В прошлой домашке отправил последнее задание и не сохранил комментарии, а там задал вопрос, но с помощью этой уже разобрался, просто в питоне нет ++ :)
+        //пример 1
+        let a = 1, b = 1, c, d;
+        c = ++a;
+        alert(c); //ответ: 2
+        // Сначала a увел на 1 и станет 2, потом c присвоит то же значение
+
+        //пример 2
+        d = b++;
+        alert(d); //ответ: 1
+        // Тут сначала присвоит значение b, а потом b увел на 1
+
+        //пример 3
+        c = 2 + ++a;
+        alert(c); //ответ: 5
+        // c = 2 + ++2 = 2 + 3 = 5
+
+        //пример 4
+        d = 2 + b++;
+        alert(d); //ответ: 4
+        // d = 2 + 2++ = (d = 4 и b + 1)
+
+        alert(a); //3 стала 3 в примере "3"
+        alert(b); //3 стала 3 в примере "4"
+
+
+        //Второе задание
+        let a = 2;
+        let x = 1 + (a *= 2);
+        // x = 1 +(4) = 5
+
+        //Третье задание Объявить две переменные a и b и задать им целочисленные произвольные начальные  значения
+
+        let a = 5
+        let b = 6;
+        if (a >= 0 && b >= 0) {
+            alert(a - b);
+        } else if (a < 0 && b < 0) {
+            alert(a * b);
+        } else if (a * b < 0) {
+            alert(a + b);
+        } else if (a + b < a || b + a < b) {
+            alert(a*b)
+        }
+
+        //Четвертое Реализовать основные 4 арифметические операции
+
+        function addition(a, b) {
+            return a + b;
+        }
+
+        function deduction(a, b) {
+            return a - b;
+        }
+
+        function division(a, b) {
+            return a / b;
+        }
+
+        function multi(a, b) {
+            return a * b;
+        }
+
+        //ятое Реализовать функцию с тремя параметрами
+
+        function mathOperation(arg1, arg2, operation) {
+            switch (operation) {
+                case "+":
+                    return addition(arg1, arg2);
+                case "-":
+                    return deduction(arg1, arg2);
+                case "/":
+                    return division(arg1, arg2);
+                case "*":
+                    return multi(arg1, arg2);
+            }
+        }
+
+    </script>
+</body>
+
+</html>
