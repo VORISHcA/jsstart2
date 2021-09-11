@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        let i = 0;
+        while (i++ <= 100) {
+            if (i % 2 == 0) {
+                console.log(i);
+            } 
+        }
+    </script>
+
+    <script>
+        "use strict";
+        
+        for (let i = 0; i <= 100; i++) {
+            if (i == 0) {
+                console.log(i + "ноль ");
+            } else if (i % 2 == 0) {
+                console.log(i + "четное ");
+            } else {
+                console.log(i + "нечетное ");
+            }
+        }
+    </script>
+
+    <script>
+        "use strict";
+        
+        const post = {
+            author: "John", //вывести этот текст
+            postId: 23,
+            comments: [
+                {
+                    userId: 10,
+                    userName: "Alex",
+                    text: "lorem ipsum",
+                    rating: {
+                        likes: 10,
+                        dislikes: 2 //вывести это число
+                    }
+                },
+                {
+                    userId: 5, //вывести это число
+                    userName: "Jane",
+                    text: "lorem ipsum 2", //вывести этот текст
+                    rating: {
+                        likes: 3,
+                        dislikes: 1
+                    }
+                },
+            ]
+        };
+        console.log(post.author);
+        console.log(post.comments[0].rating.dislikes);
+        console.log(post.comments[1].userId);
+        console.log(post.comments[1].text);
+    </script>
+
+
+    <script>
+        "use strict";
+        
+        const products = [
+            {
+                id: 3,
+                price: 200,
+            },
+            {
+                id: 4,
+                price: 900,
+            },
+            {
+                id: 1,
+                price: 1000,
+            },
+        ];
+
+        products.forEach(item => {item.price = item.price - item.price * 0.15;});
+    </script>
+
+    <script>
+        "use strict";
+        
+        const products = [
+            {
+                id: 3,
+                price: 200,
+            },
+            {
+                id: 4,
+                price: 900,
+            },
+            {
+                id: 1,
+                price: 1000,
+            },
+        ];
+
+        products.forEach(item => {item.price= item.price * 0.85;})  
+        console.log(products);
+    </script>
+
+    <script>
+        "use strict";
+        
+        const products = [
+            {
+                id: 3,
+                price: 127,
+                photos: [
+                    "1.jpg",
+                    "2.jpg",
+                ]
+            },
+            {
+                id: 5,
+                price: 499,
+                photos: []
+            },
+            {
+                id: 10,
+                price: 26,
+                photos: [
+                    "3.jpg"
+                ]
+            },
+            {
+                id: 8,
+                price: 78,
+            },
+        ];
+
+        console.log(products.filter(item => "photos" in item);
+
+    </script>
+
+    <script>
+        "use strict";
+        for (let x = 'x'; x.length <= 20; x += 'x') {console.log(x)}
+    </script>
+</body>
+</html>
